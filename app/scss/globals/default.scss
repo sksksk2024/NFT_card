@@ -1,0 +1,80 @@
+@use '../util/' as *;
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  font-size: rem(18);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: rem(20);
+  background-color: var(--very-dark-blue);
+  font-family: "Outfit", sans-serif;
+  min-height: 150vh;             //how much to scroll
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin-bottom: rem(20);
+}
+
+h2 {
+  font-size: rem(24);
+  margin-bottom: 0;
+  color: var(--white);
+}
+
+p {
+  color: var(--soft-blue);
+  font-weight: 300;
+}
+
+.attribution { 
+  font-size: 18px; 
+  text-align: center; 
+  color: var(--soft-blue);
+}
+
+a { 
+  text-decoration: none;
+  color: var(--white); 
+  transition: 150ms ease-in-out;
+}
+
+a:hover {
+  color: var(--cyan);
+}
+
+hr {
+  border: none;         /* Remove any border */
+  border-top: 2px solid var(--very-dark-blue-card-line);  /* Add a solid line */
+  background: none;     /* Remove any background */
+  margin: 1em 0;        /* Add some vertical spacing */
+  width: 100%;
+  max-width: rem(420);
+}
+
+.separate {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2.5fr 2fr;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
+  // align-items: center;
+  // gap: rem(200);
+}
+
+.adjustments {
+  margin-left: -5px;
+}
