@@ -12,6 +12,7 @@
   background: var(--very-dark-blue-card-bg);
   border-radius: rem(20);
   
+  
   // Inner container styling
   .container {
     display: flex;
@@ -19,49 +20,65 @@
     align-items: center;
     gap: rem(10);
   }
-
+  
+  
   &__title {
     cursor: pointer;
     transition: 150ms ease-in-out;
   }
-
+  
   &__title:hover {
     color: var(--cyan);
   }
-
-  &__img {
+  
+  .card__img {
     position: relative;
-    height: 380px;
+    height: 380px; /* Cyan background height */
     width: 100%;
     max-width: 420px;
     border-radius: 16px;
     overflow: hidden;
     cursor: pointer;
     transition: background-image 150ms ease;
-  
-    &::before {
-      content: url('./../../images/icon-view.jpg') !important; // Make sure this is the correct path
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 16px;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      opacity: 0;
-      transition: opacity 150ms ease-in-out;
-      z-index: 2;
-    }
     
     &:hover {
-      content: url('./../../images/icon-view.jpg') !important; // Make sure this is the correct path
-      opacity: 0.5; // Adjust as needed
-      background-color: cyan;
+      background-color: var(--cyan);
+      
     }
   }
-
+  
+  .card__cube {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: opacity 300ms ease;
+  }
+  
+  .card__view {
+    position: absolute;
+    fill: var(--white);
+    top: 50%; /* Move to the middle */
+    left: 50%; /* Move to the middle */
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    width: auto;
+    height: 60px; /* Set the height of the view image */
+    z-index: 2;
+    opacity: 0; /* Start with the second image hidden */
+    transition: opacity 300ms ease;
+  }
+  
+  .card__img:hover .card__cube {
+    opacity: 50%; /* Hide the first image on hover */
+  }
+  
+  .card__img:hover .card__view {
+    opacity: 1; /* Show the second image on hover */
+    
+  }
+  
   .ethereum {
     display: flex;
     flex-direction: row;
@@ -70,7 +87,7 @@
     gap: rem(10);
     grid-column: 1;
   }
-
+  
   .time--left {
     display: flex;
     flex-direction: row;
@@ -79,7 +96,7 @@
     gap: rem(10);
     grid-column: 4;
   }
-
+  
   &__avatar {
     height: 50px;
     border: 2px solid var(--white);
@@ -93,22 +110,22 @@
       max-height: rem(650);
       height: auto; // Adjust height to maintain aspect ratio
     }
-
+    
     .container {
       display: grid;
       grid-template-columns: .1fr 99fr 2fr;
       grid-template-rows: .1fr -.1fr;
     }
-
+    
     &__avatar {
       grid-column: 1;
     }
-
+    
     .container p {
       grid-column: 2;
       grid-row: 1;
     }
-
+    
     .adjustments {
       grid-column: 2;
       grid-row: 2;
