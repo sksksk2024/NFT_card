@@ -1,3 +1,5 @@
+## I am so proud of the hover effect. Even though is not mine, I could understand It and applied its logic to the bookmark project too!!
+Live URL: https://sksksk2024.github.io/NFT_card/
 # Frontend Mentor - NFT preview card component
 
 ![Design preview for the NFT preview card component coding challenge](./design/desktop-preview.jpg)
